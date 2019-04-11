@@ -1,0 +1,3 @@
+Luis,Izquierdo,,,50
+Pepe,Perez,,,60
+Juan,Pe,,,70
