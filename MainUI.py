@@ -1,12 +1,27 @@
 import sys
-from PySide2.QtWidgets import QLabel, QVBoxLayout,QApplication, QDialog, QLineEdit, QPushButton
+from PySide2.QtWidgets import QLabel, QGroupBox, QVBoxLayout,QApplication, QDialog, QLineEdit, QPushButton
+from PySide2.QtCore import QRect
 
 class MainUi(QDialog):
 
     def __init__(self, parent=None):
         super(MainUi, self).__init__(parent)
         self.setWindowTitle("My Form")
-        self.createInterface()
+        #self.createInterface()
+        self.createLayout()
+
+    def createLayout(self):
+        #self.clientListRect = QRect(5, 5, 200, 600)
+        self.buttonLoadFile = QPushButton("Load File")
+        self.buttonSaveFile = QPushButton("Save File")
+        layout = QVBoxLayout()
+        layout.addWidget(self.buttonLoadFile)
+        layout.addWidget(self.buttonSaveFile)
+        self.setLayout(layout)
+        self.buttonLoadFile.clicked.connect(self.loadFile)
+
+    def loadFile(self):
+        print("Hola Mundo")
 
     def createInterface(self):
         self.labelName = QLabel("Nombre")

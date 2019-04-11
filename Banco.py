@@ -39,3 +39,29 @@ class Banco:
                     str(client.saldo) + "\n"
 
                 the_file.write(texto)
+
+    def creaClientesDeMentira(self):
+        cliente = ClienteBanco()
+        cliente.nombre = "Luis"
+        cliente.apellido = "Izquierdo"
+        cliente.ccc = "0049-2764-89-34365789043"
+        cliente.dni = "78564390B"
+        cliente.saldo = 50
+
+        cliente2 = ClienteBanco()
+        cliente2.nombre = "Pepe"
+        cliente2.apellido = "Perez"
+        cliente.ccc = "0049-2764-89-5633229077"
+        cliente.dni = "78564465f"
+        cliente2.saldo = 60
+
+        cliente3 = ClienteBanco()
+        cliente3.nombre = "Juan"
+        cliente3.apellido = "Martinez"
+        cliente.ccc = "0049-2764-89-34365784562"
+        cliente.dni = "78564745C"
+        cliente3.saldo = 70
+
+        self.addClient(cliente)
+        self.addClient(cliente2)
+        self.addClient(cliente3)
